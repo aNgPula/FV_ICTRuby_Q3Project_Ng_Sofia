@@ -148,26 +148,13 @@
 
 <script>
 
-//This is to check the price of the normal ticket.
 function price(){
-
-//The vars dest and start are used to get the value for the arithmetic operators (using the .value)
 	var dest = document.getElementById("Dest").value;
 	var start = document.getElementById("Start").value;
-
-//The var inprice is used to subtract to know the difference so we know how much the ticket costs.
 	var inprice = Number(dest) - Number(start);
-
-//The var price is used to make sure it is not negative as that wouldn't make sense. (using the .abs)
 	var price = Math.abs(inprice);
-
-//The var fprice is used to calculate for the actual price, as the inprice shows just how much is added to the standard value which is 13.
 	var fprice = Number(price) + 13;
-
-//The var fp is to have the final value only be in two (2) decimal places. 
 	var fp = fprice.toFixed(2);
-
-//The window alert is supposed to let the person know how much the ticket will be.
 	window.alert("Your ticket will cost " + fp "₱.");
 }
 
