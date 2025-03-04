@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Feedback Form</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<style>
+
+	#F{
+		width: 1000px;
+		padding: 10px;
+		margin: auto;
+		background: rgba(0, 0, 0, 0.5);
+		box-shadow: 2px 2px 10px rgba(0,0,0, 0.8);
+	}
+
+	body{
+		margin-top: 100px;
+		margin-bottom: 100px;
+		background-image: url(https://media.istockphoto.com/id/1012117520/photo/mrt-train-in-manila.jpg?s=612x612&w=0&k=20&c=ETmzrVi_dzhQQrEo3CH-YyIw46BvN41X66NbRxeCMZA=);
+		background-repeat:no-repeat;
+		background-size: cover;
+		background-attachment:fixed;
+		font-family: Yu Gothic;
+		color: powderblue;
+	}
+	</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		<div class="container container-fluid">
+			<a class="navbar-brand" href="index.html"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Melbourne_train_logo.svg/1022px-Melbourne_train_logo.svg.png" style="width: 50px; height: 50px"></a>
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="sched.html">Map & Schedule</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="FeedbackForm.html">Feedback</a>
+				</li>
+			</ul>
+
+			<form class="d-flex">
+				<input class="form-control" type="text" placeholder="search...">
+				<button class="btn btn-info" type="button">Search</button>
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+		<div class="container container-fluid">
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a class="nav-link">@ 2025 Ng & Singh</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="ICTsources.pdf">Sources</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+<center>
+<div id="F">
+<div id="container1">
+	<span style="color: skyblue; font-size: 60px; font-family:Consolas;">MRT Feedback Form</span>
+</div>
+
+<br>
+
+<div class="container">
+	<form>
+		<div class= "row">
+			<div class= "col-md-6">
+		<label for="name">Full Name:</label>	
+		<br>
+		<input type="text" id="FullName" name="name" placeholder="Type name here..." class= "form-control">
+</div>
+
+<div class= "col-md-6">
+		<label for="age">Email Address:</label>	
+		<br>
+		<input type="email" id="AEmail" name="email" placeholder="Type email here..." class= "form-control">
+
+	</div>
+</div>
+		<br><br>
+
+		<label for="why">Feedback:</label>	
+		<br>
+		<textarea rows="4" cols="30" placeholder="Type feedback/comment here..." class= "form-control"></textarea>
+
+		<br><br>
+		<button type="Submit" class="btn btn-info" onclick="Fsubmit()">Submit Feedback</button>
+		<br><br>
+
+	<h3><span style="color: skyblue;">Contact Information</h3></span>
+	<small> If you have a concern/problem, you may contact through the following: </small>
+	<br><br>
+	<ul>
+		<li>EDSA corner North Avenue</li>
+		<li>8929-5347 local 2810</li>
+		<li>feedback@dotrmrt3.gov.ph</li>
+	</ul>
+</center>
+</form>
+</div>
+
+<script>
+
+//This function is to alert the person that their feedback/comment was successfully submitted through when they press the button.
+function Fsubmit(){
+
+//The vars FullName and AEmail are used to say the name and email in the alert message using the .value technique.
+
+	var FullName = document.getElementById("FullName").value;
+	var AEmail = document.getElementById("AEmail").value;
+
+//This is to alert and confirm that the feedback/comment was sent.
+	window.alert("Hi there " + FullName + ", Thank you for your feedback! Our response will go to your email at " + AEmail + ".");
+}
+</script>
+</body>
+</html>
