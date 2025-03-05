@@ -100,7 +100,6 @@
 	<option value="11">Ayala Ave.</option>
 	<option value="15">Magallanes</option>
 	<option value="15">Taft Ave.</option>
-	
 </select>
 <br>
 <h3><label><span style="color: powderblue;">To where?</h3></label></span>
@@ -120,13 +119,23 @@
 	<option value="15">Magallanes</option>
 	<option value="15">Taft Ave.</option>
 </select>
-<br><br>
-<h4> <span style="color: skyblue;">Check price! </h4></span>
+
 <br>
-<button class="btn btn-info" onclick="price()">Regular Price</button>
-<button type="Submit" class="btn btn-info" onclick="dprice()">Discounted Price</button>
+<h3><label><span style="color: powderblue;">Are one of the following?</h3></label></span>
+<select class="form-select" id="Dis">
+	<option value="1">Regular</option>
+	<option value="0.2">Student </option>
+	<option value="0.2">Senior</option>
+	<option value="0.2">Military</option>
+	<option value="0.2">Disabled</option>
+</select>
+
 <br><br>
-<button type="Submit" class="btn btn-success" onclick="Purc()">Purchase</button>
+<h4> <span style="color: skyblue;">Price Section</h4></span>
+<br>
+<button type="Submit" class="btn btn-info" onclick="price()">Check price</button>
+<br><br>
+<button type="Submit" class="btn btn-info" onclick="Purc()">Confirm</button>
 <br><br><br>
 
 <span style="color: lightseagreen;">
@@ -144,39 +153,48 @@
 </div>
 </div>
 
-
-
 <script>
 
+// This function is for the button that shows the user how much their ticket will cost.
 function price(){
-	var dest = document.getElementById("Dest").value;
+
+// The vars start and dest using the .dest are used to calculate the price of the ticket.
 	var start = document.getElementById("Start").value;
+	var dest = document.getElementById("Dest").value;
+
+// The var dis is used to know if the person's ticket will be discounted or not.
+	var dis = document.getElementById("Dis").value;
+
+// The var inprice is used to calculate how much the ticket is.
 	var inprice = Number(dest) - Number(start);
-	var price = math.abs(inprice);
+
+// The var price is used to prevent the value of inprice to be negative.
+	var price = Math.abs(inprice)
+
+// The var fprice is used to add the base value of 13 as that is the standard pay amount.
 	var fprice = Number(price) + 13;
-	var fp = fprice.toFixed(2);
-	window.alert("Your ticket will cost " + fp "₱.");
+
+// The var dis is used to calculate the person's ticket based off their attributes. (Also for the discount portion)
+	var dis = Number(fprice) * Number(dis)
+
+// The var fp is used to make the value only have two decimal places.
+	var fp = dis.toFixed(2);
+
+// The window.alert is used to alert the user through windows about the price.
+	window.alert("The price of your ticket will be " + fp + "₱.");
 }
 
-function dprice(){
-	var dest = document.getElementById("Dest").value;
-	var start = document.getElementById("Start").value;
-	var inprice = Number(dest) - Number(start);
-	var price = math.abs(inprice)
-	var fprice = Number(price) + 13;
-	var dprice = Number(fprice) * 0.2;
-	var di = dprice.toFixed(2);
-	window.alert("Your ticket will cost " + di "₱.");
-}
-
+// This function is used to alert the user that they have purchased the ticket.
 function Purc(){
 	window.alert("Your ticket has now been purchased, thank you!");
 }
 
+// This function is used to alert the user that they have purchased the stored value ticket.
 function svtp(){
 	window.alert("Your stored value ticket has now been purchased, thank you!");
 }
 
+// This function is used to alert the user that they have purchased the stored value ticket at a discounted rate.
 function dsvtp(){
 	window.alert("Your stored value ticket has now been purchased, thank you!");
 }
